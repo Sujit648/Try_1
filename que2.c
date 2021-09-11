@@ -2,37 +2,51 @@
 #include<string.h>
 #include<conio.h>
 
-int Stringcopy()
+void Stringcopy()
 {
-char studentname[20];
-strcpy(studentname,"Amit");
-printf("\nStudentname=%s\n",studentname);
-return(0);
-    
-}
-int StringCmp()
-{
-char name1[]= "amit",name2[]= "amita";
-if(strncmp(name1,name2,3)==0)
-printf("Values are same");
-else
-printf("Values are not same");
-return(0);
-}
-int StringConcat()
-{
-char studentname[20]="Amit";
+char studentname[20] = "Amit";
+char copy[20]="";
 
-strcat(studentname,"Singh");
-printf("\nStudentname=%s",studentname);
-return(0);
+for(int i =0; i<20; i++){
+    // if (studentname[i] == '\0'){
+    //     return;
+    // }
+    copy[i] = studentname[i];
 }
+
+printf("\nStudentname=%s\n",studentname);
+printf("\nCopy=%s\n",copy);
+return;
+}
+
+
+
+char* StringConcat(char* destination, const char* source){
+
+    char* ptr = destination + strlen(destination);
+    while (*source != '\0') {
+        *ptr++ = *source++;
+    }
+    *ptr = '\0';
+    return destination;
+}
+
+// dest = "test123'\0'"
+// *ptr = dest + len(dest)
+// src = "source'\0'"
+
+// dest = "test123source'\0'"
+// print(dest) = test123source
+
+
 
 int main()
 {
-    int a= Stringcopy();
-    int b= StringCmp();
-    int c= StringConcat();
-   
+    // Stringcopy();
+    char x[100] = "";
+    StringConcat(x, "Test");
+    StringConcat(x, "Test2");    
+    printf(x);
+
     return 0;
 }
