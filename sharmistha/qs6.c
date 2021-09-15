@@ -6,6 +6,14 @@
 
 # define MAX 5
 
+struct student {
+    char name[50];
+    int roll;
+    float marks;
+    int std;
+    char subname[50];
+} s;
+
 int cqueue_arr[MAX];
 
 int front = -1;
@@ -119,13 +127,43 @@ printf("Enter your choice : ");
 
 scanf("%d",&choice);
 
+
+
+   
+
+   
+
 switch(choice)
 
 {
 
 case 1 :
+ printf("Enter information:\n");
+    printf("Enter name: ");
+    fgets(s.name, sizeof(s.name), stdin);
 
-printf("Input the element for insertion in queue : ");
+ printf("Enter Std: ");
+    scanf("%d", &s.std);
+
+    printf("Enter roll number: ");
+    scanf("%d", &s.roll);
+ 
+    printf("Enter subject name: ");
+    fgets(s.subname, sizeof(s.subname), stdin);
+
+    printf("Enter marks: ");
+    scanf("%f", &s.marks);
+
+    printf("Displaying Information:\n");
+    printf("Name: ");
+    printf("%s", s.name);
+
+    printf("Roll number: %d\n", s.roll);
+     printf("Standard: %d\n", s.std);
+     printf(" Subject Name: ");
+    printf("%s", s.subname);
+    printf("Marks: %.1f\n", s.marks);
+
 
 scanf("%d", &item);
 
@@ -150,7 +188,7 @@ printf("Wrong choice\n");
 
 }
 
-}while(choice!=4);
+}while(choice!=3);
 
 return 0;
 
